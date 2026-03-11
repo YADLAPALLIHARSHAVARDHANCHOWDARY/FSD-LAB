@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voter Eligibility Checker</title>
+    <style> table { border-collapse: collapse; } th, td { border: 1px solid #ddd; padding: 8px; } </style>
+</head>
+<body>
+    <h2>Voter Information</h2>
+    <div id="output"></div>
+
+    <script>
+        let name = prompt("Enter your name:", "Voter");
+        let ageInput = prompt("Enter your age:", "0");
+        let age = parseInt(ageInput) || 0;  // Type conversion to int
+        let canVote = age >= 18 ? "Yes" : "No";
+
+        document.getElementById("output").innerHTML = `
+            <table>
+                <tr><th>Name</th><th>Age</th><th>Can Vote?</th></tr>
+                <tr><td>${name || 'N/A'}</td><td>${age}</td><td>${canVote}</td></tr>
+            </table>
+        `;
+    </script>
+</body>
+</html>
